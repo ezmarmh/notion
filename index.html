@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Minimal Date Widget</title>
+  <title>Widget de Fecha Minimalista</title>
   <style>
     body {
       margin: 0;
@@ -11,30 +11,31 @@
       justify-content: center;
       align-items: center;
       height: 100vh;
-      background-color: #f5f5f5;
+      background-color: #2c2c2c; /* Gris oscuro */
       font-family: 'Arial', sans-serif;
+      color: #ffffff; /* Blanco */
     }
 
     .widget {
       text-align: center;
       padding: 20px;
-      background: #ffffff;
-      border: 1px solid #e0e0e0;
+      background: #333333; /* Fondo gris oscuro para contraste */
+      border: 1px solid #444444;
       border-radius: 10px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      width: 250px;
+      width: 300px;
     }
 
     .day {
-      font-size: 24px;
-      color: #333;
+      font-size: 36px; /* Fuente más grande para el día */
+      color: #ffffff;
       font-weight: bold;
     }
 
     .date {
-      font-size: 18px;
-      color: #555;
-      margin-top: 5px;
+      font-size: 24px; /* Fuente más grande para la fecha */
+      color: #dddddd;
+      margin-top: 10px;
     }
   </style>
 </head>
@@ -51,11 +52,11 @@
 
       const updateDateWidget = () => {
         const now = new Date();
-        const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-        const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        const days = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
+        const months = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
         
         const day = days[now.getDay()];
-        const date = `${now.getDate()} ${months[now.getMonth()]} ${now.getFullYear()}`;
+        const date = `${now.getDate()} de ${months[now.getMonth()]} de ${now.getFullYear()}`;
 
         dayElement.textContent = day;
         dateElement.textContent = date;
